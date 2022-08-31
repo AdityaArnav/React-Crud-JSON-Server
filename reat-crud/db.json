@@ -1,0 +1,11 @@
+{
+    "users":[
+        {
+            "name" : "Aditya",
+            "address" : "Patna",
+            "email" : "arnavmania@gmail.com",
+            "contact": "8178419024",
+            "id" : 1
+        }
+    ]
+}
