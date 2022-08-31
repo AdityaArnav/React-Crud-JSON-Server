@@ -115,7 +115,7 @@ function App() {
               </Form.Group>
               
               <div className='d-grid gap-2 mt-3'>
-                <Button type="submit" variant="secondary">Submit</Button>
+                <Button type="submit" variant="secondary">{update?"Update":"Submit"}</Button>
               </div>
             </Form>
           </Col>
