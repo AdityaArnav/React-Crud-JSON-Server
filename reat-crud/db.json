@@ -1,11 +1,25 @@
 {
-    "users":[
-        {
-            "name" : "Aditya",
-            "address" : "Patna",
-            "email" : "arnavmania@gmail.com",
-            "contact": "8178419024",
-            "id" : 1
-        }
-    ]
+  "users": [
+    {
+      "name": "Aditya",
+      "address": "Patna",
+      "email": "arnavmania@gmail.com",
+      "contact": "8178419024",
+      "id": 1
+    },
+    {
+      "name": "shibu",
+      "address": "digha",
+      "email": "aditya@gmail.com",
+      "contact": "344",
+      "id": 2
+    },
+    {
+      "name": "arnav",
+      "address": "india",
+      "email": "dfkf@gmail.com",
+      "contact": "5366",
+      "id": 3
+    }
+  ]
 }
