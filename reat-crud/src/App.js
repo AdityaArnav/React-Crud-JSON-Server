@@ -16,6 +16,8 @@ const initialState = {
 function App() {
   const [create, setCreate] = useState(initialState);
   const [data, setData] = useState([]);
+  const [userId, setUserId] = useState(null);
+  const [update,setUpdate] = useState(false)
 
   const { name, address, email, contact } = create;
 
@@ -38,14 +40,48 @@ function App() {
       toast.error("please fill all input field")
     }
     else{
-      axios.post(api, create);
+      if(!update){
+        axios.post(api, create);
         toast.success("Added Successfully")
         setCreate({name: "",address: "", email: "", contact : ""})
         setTimeout(()=>{
           loadUser();
         },500)
+
+      }
+      else{
+        axios.put(`${api}/${userId}`, create);
+        toast.success("updated Successfully")
+        setCreate({name: "",address: "", email: "", contact : ""})
+        setTimeout(()=>{
+          loadUser();
+        },500)
+        setUserId(null);
+        setUpdate(false);
+      }
+
     }
   }
+
+  const handleDelete= async (id)=>{
+    if(window.confirm("Do you want to delete that user ?")){
+      axios.delete(`${api}/${id}`);
+      toast.success("Deleted Successfully");
+      setTimeout(()=>{
+        loadUser();
+      },500)
+    }
+
+  }
+
+  const handleUpdate = (id)=>{
+    const singleUser = data.find((el)=> el.id===id);
+      setCreate({...singleUser})
+      setUserId(id);
+      setUpdate(true);
+    }
+
+  
 
   return (
     <>
@@ -106,8 +142,8 @@ function App() {
                     <td>{el.contact}</td>
                     <td>
                       <ButtonGroup>
-                        <Button style={{ marginRight: "5px" }} variant="primary">Update</Button>
-                        <Button style={{ marginRight: "5px" }} variant="danger">Delete</Button>
+                        <Button style={{ marginRight: "5px" }} variant="primary" onClick={()=>{handleUpdate(el.id)}}>Update</Button>
+                        <Button style={{ marginRight: "5px" }} variant="danger" onClick={()=>{handleDelete(el.id)}}>Delete</Button>
                       </ButtonGroup>
                     </td>
 

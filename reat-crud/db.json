@@ -8,18 +8,11 @@
       "id": 1
     },
     {
-      "name": "shibu",
-      "address": "digha",
-      "email": "aditya@gmail.com",
-      "contact": "344",
+      "name": "arnav developer",
+      "address": "banglore",
+      "email": "arnadev@gmail.com",
+      "contact": "38375",
       "id": 2
-    },
-    {
-      "name": "arnav",
-      "address": "india",
-      "email": "dfkf@gmail.com",
-      "contact": "5366",
-      "id": 3
     }
   ]
 }
